@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.get_profile.is_bikeanjo %}
+
+<div class="row-fluid">
+  {% if total_open_requests %}
+  <div class="span8">
+    <h2>Olá {{ user.get_full_name }}, você tem {{ total_open_requests }} pedido{{ total_open_requests|pluralize }}
+
+    {% if ongoing_requests %}
+    <h3>Aguardando sua resposta</h3>
+
+    <div id="request-list">
+      {% for request in ongoing_requests %}
+        <div class="request-container accordion-group">
+            <a class="request-head" data-toggle="collapse" data-parent="#request-list" href="#request_{{ request.id }}">
+              Pedido feito por <strong>{{ request.user }}</strong> há <strong>{{ request.timedelta.days }}</strong> dia{{ request.timedelta.days|pluralize }}
+            </a>
+          <div id="request_{{ request.id }}" class="request-body collapse">
+              <p>Tipo de atendimento: {{ request.get_service_display|lower }}</p>
+              <p>Ponto de saída: {{ request.departure_label }}</p>
+              <p>Ponto de chegada: {{ request.arrival_label }}</p>
+             <p>Outras informações:</p>
+             <div class="well">
+               {{ request.info }}
+             </div>
+
+            <a href="{% url request_accept request.id %}" class="btn btn-primary" style="margin-right: 5px;">Sim, posso atender o pedido</a>
+            <a href="{% url request_refuse request.id %}" class="btn">Não posso atender o pedido</a>
+            <div class="request-foot" style='margin-bottom: 10px;'></div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if waiting_requests %}
+    <h3>Em andamento</h3>
+    <div id="request-list2">
+      {% for request in waiting_requests %}
+        <div class="request-container accordion-group">
+            <a class="request-head" data-toggle="collapse" data-parent="#request-list2" href="#request_{{ request.id }}">
+              Pedido feito por <strong>{{ request.user }}</strong> há <strong>{{ request.timedelta.days }}</strong> dia{{ request.timedelta.days|pluralize }}
+            </a>
+          <div id="request_{{ request.id }}" class="request-body collapse">
+              <p>Tipo de atendimento: {{ request.get_service_display|lower }}</p>
+              <p>Ponto de saída: {{ request.departure_label }}</p>
+              <p>Ponto de chegada: {{ request.arrival_label }}</p>
+             <p>Outras informações:</p>
+             <div class="well">
+               {{ request.info }}
+             </div>
+
+            <a href="{% url request_finish request.id %}" class="btn btn-primary">Já atendi o pedido</a>
+            <a href="{% url request_refuse request.id %}" class="btn btn-primary">Encaminhar a outro Bike Anjo</a>
+            <a href="{% url request_cancel request.id %}" class="btn btn-danger">Solicitante não quer mais/Não responde</a>
+            <div class="request-foot" style='margin-bottom: 10px;'></div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}  
+  </div>
+  <div class="span1">
+  </div>
+  <div class="span3">
+    {% include "statistics.html" %}
+  </div>
+  {% endif %}
+</div>
+
+<div class='row-fluid' style="margin-top: 20px;">
+  <div class="span8">
+  <h2>Pontos cadastrados</h2>
+  <div id='map-img-container'>
+    <img src="http://maps.googleapis.com/maps/api/staticmap?size=770x250&markers=color:blue{% for point in user.get_profile.point_set.all %}%7C{{ point.geometry.y }},{{ point.geometry.x }}{% endfor %}&sensor=false&key=AIzaSyC9NK9RZPIeXphaettope2mV3gO9C-VYCU"</img>
+</div>
+  <p>Visite seu <a href="{% url profile %}#mymap">perfil</a> para melhorar sua área de atuação 0=D</p>
+  </div>
+  {% if not total_open_requests %}
+  <div class="span1">
+  </div>
+  <div class="span3">
+    {% include "statistics.html" %}
+  </div>
+
+  {% endif %}
+{% else %}
+
+  {% include "statistics.html" %}
+  
+{% endif %}
+
+{% endblock %}
+
+{% block extra-script %}
+<script>
+	$(document).ready(function() {
+		$('.made input').attr('disabled', true);
+	});
+</script>
+{% endblock %}

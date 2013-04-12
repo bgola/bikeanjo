@@ -1,0 +1,9 @@
+<div class="well" id="stats">
+<h3>Bike Anjos</h3>
+	<ul>
+	  {% if number_of_requests %}
+  	  <li>Você ja atendeu <strong>{{ number_of_requests }}</strong> pedido{{ number_of_requests|pluralize }}.</li>
+  	{% endif %}
+	  <li>Atualmente existe{{ number_of_bikeanjos|pluralize:"m" }} </strong>{{ number_of_bikeanjos }}</strong> Bike Anjo{{ number_of_bikeanjos|pluralize }} cadastrados em </strong>{{ number_of_cities }}</strong> cidade{{ number_of_cities|pluralize }}.</li>
+</div>
+

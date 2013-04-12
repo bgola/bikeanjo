@@ -1,0 +1,317 @@
+// Bootswatch.less
+// Swatch: Simplex
+// -----------------------------------------------------
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+
+@import "variables.less";
+
+// Make headers black
+h1, h2, h3, h4, h5, h6 {
+	color: @gray;
+	margin-bottom:10px;
+}
+
+// NAVBAR
+// -----------------------------------------------------
+
+.navbar {
+	font-size: 17px;
+}
+
+// Gray text color
+.navbar .brand, .subnav a {
+	color: @navbarText;
+}
+
+// Make active item white
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+	background-color: @grayDarker;
+	color: @white;
+}
+
+// Remove text-shadow and make white on hover
+.navbar .nav > li > a {
+	text-shadow: none;
+	&:hover {
+		color: @white;
+		background-color: rgba(256, 256, 256, 0.2);
+	}
+}
+
+.navbar .navbar-text > a {
+	color: @navLinkColor;
+	&:hover {
+		color: @navLinkColorHover;
+	}
+}
+
+
+// Remove menu item dividers on subnav
+.subnav .nav > li > a {
+	border-left: 0px solid white !important;
+	border-right: 0px solid white !important;
+	color: @grayDark;
+}
+
+.btn-navbar:hover {
+    background-color: darken(@white, 20%);
+    background-position: 0 0;
+}
+
+// HEADER
+// -----------------------------------------------------
+
+#header-img-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 736px;
+	padding-top: 70px;
+}
+
+// FORMS
+// -----------------------------------------------------
+
+// Style search input 
+.search-query {
+	border: 1px solid #CCC;
+    .border-radius(2px);
+	background-color: @white;
+}
+
+input, textarea, select, .uneditable-input {
+	margin-bottom: 0px;
+}
+
+form {
+	margin: 0 0 8px;
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+	width: 300px;
+	margin-right: 20px;
+}
+
+.form-horizontal .controls {
+	margin-left: 0px;
+
+	input[type=text], textarea {
+		width: 520px;
+	}
+
+	input[type=radio] {
+		margin-left: 0px;
+	}
+}
+
+#div_id_gender .controls label {
+	margin-left: 302px;
+}
+
+#div_id_service_routes, #div_id_service_accompaniment, 
+#div_id_service_teach, #div_id_service_instinute {
+	margin-bottom: 5px;
+}
+
+.buttonHolder {
+	background-color: @grayLighter;
+	text-align: right;
+	padding:10px;
+}
+
+#profile-form .controls textarea {
+	width: 380px;
+}
+
+// LOGIN FORM
+// -----------------------------------------------------
+
+
+#login-form-div {
+	border-left: 1px solid @grayLighter;
+	padding-left: @fluidGridGutterWidth;
+
+
+	input[type=text], input[type=password] {
+		 width: 97%;
+	}
+
+	input[type=submit] {
+		float: right;
+	}
+
+	.buttonHolder {
+		padding: 0px;
+	}
+
+	a {
+		float: left;
+	}
+
+	p {
+		width: 100%;
+		text-align: center;
+		display: block;
+		clear: both;
+	}
+
+	.connect-button {
+		border-top: 1px solid @grayLighter;
+		padding-top: 10px;
+		margin-top: 50px;
+		clear: both;
+	}
+	
+}
+
+
+// BUTTONS
+// -----------------------------------------------------
+
+// Make buttons boxier and flatter
+.btn {
+  .border-radius(2px);
+  #gradient > .vertical-three-colors(@white, @white, 25%, darken(@white, 10%));
+}
+
+.btn-warning {
+  .caret {
+    border-top-color: @white;
+    .opacity(75);
+  }
+}
+
+.btn-primary {
+  .buttonBackground(lighten(@primaryButtonBackground, 5%), @primaryButtonBackground);
+}
+
+.btn-warning {
+  .buttonBackground(lighten(@orange, 5%), @orange);
+}
+
+.btn-danger {
+  .buttonBackground(lighten(@red, 5%), @red);
+}
+
+.btn-success {
+  .buttonBackground(lighten(@green, 5%), @green);
+}
+
+.btn-info {
+  .buttonBackground(lighten(#5bc0de, 5%), #5bc0de);
+}
+
+.btn-inverse {
+  .buttonBackground(lighten(@purple, 5%), @purple);
+}
+
+// ICONS
+// -----------------------------------------------------
+
+// Make icons gray
+i[class^="icon-"]{
+	opacity: 0.6;
+}
+
+// FOOTER
+// ----------------------------------------------------
+
+footer#footer {
+	border-top: 1px solid @grayLighter;
+	padding-top: 5px;
+	margin-top: 0px;
+}
+
+
+#sf-wrapper {
+	height: 95%;
+	min-height: 95%;
+	background-color: @white;
+}
+
+#map-img-container {
+	width: 886px;
+	margin-top: 10px;
+
+	img {
+		border: 2px solid @grayDark;
+	}
+}
+
+// MAP
+// ----------------------------------------------
+
+#map {
+	width: 75%;
+	float: left;
+	text-align: left;
+	margin: 5px;
+	margin-bottom: 20px;
+}
+
+#map_locations {
+	width: 20%;
+	float: left;
+	text-align: left;
+	margin: 5px;
+	margin-bottom: 20px;
+}
+
+#map_canvas {
+	width: 100%;
+	height: 400px;
+	margin-top: 5px;
+}
+
+.map_canvas_wrapper {
+	clear: both;
+}
+
+#locations {
+	list-style: none;
+	margin: 0px;
+	
+
+	a {
+		color: #F00;
+	}
+
+	a.gmaps-label {
+		color: @grayLight;
+		font-size: 10px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+// HOME AUTH 
+.request-container {
+	border: @grayLighter 2px solid;
+	background-color: lighten(@grayLighter, 5%);
+	border-radius: 4px 4px 4px 4px;
+    margin-bottom: 5px;
+	.request-head {
+		padding: 10px 10px 10px 10px;
+		display: block;
+		cursor: pointer;
+		&:hover { 
+			background-color: lighten(@grayLighter, 1%)
+		}
+	}
+	.request-body {
+		padding: 0px 10px 0px 10px;
+	}
+}
+
+#stats {
+	ul { 
+		list-style: none;
+		margin: 0px;
+	}
+}

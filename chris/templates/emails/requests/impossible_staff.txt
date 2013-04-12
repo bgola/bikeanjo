@@ -1,0 +1,21 @@
+Car@s Administradores do Bike Anjo,
+
+Informamos que o pedido de {{ request.user.user.get_full_name }} não pôde ser atendido por
+nenhum Bike Anjo.
+
+Vejam abaixo as informações do pedido e chequem o admin do sistema
+<http://sistema.bikeanjo.com.br/admin/bikeanjo/request/{{ request.pk }}/>.
+
+Solicitante: {{ request.user.user.get_full_name }}
+Tipo de pedido: {{ request.service }}
+Local de saída: {{ request.departure_label }}
+Local de chegada: {{ request.arrival_label }}
+Bike Anjos que recusaram: {{ request.refused_by }}
+_________________________________________________
+Mais informações sobre o pedido: 
+{{ request.info }}
+________________________________________________
+
+Obrigado! 0=D
+
+Bike Anjo

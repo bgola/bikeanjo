@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='row-fluid'>
+  <div class='span8'>
+    <h2>Bem-vind@ ao novo sistema do Bike Anjo!</h2>
+    <p>Criamos este portal para o atendimento dos pedidos de Bike Anjo, por isso, precisamos de algumas informações básicas para que se cadastre no nosso novo sistema.</p>
+    <br />
+    <div class='row-fluid'>
+      <div class='span6'>
+        <h3>Quero ajuda de um Bike Anjo!</h3>
+        <p>Quer começar a pedalar ou precisa de algumas dicas para pedalar com mais segurança e confiança?</p>
+        <a class="btn" href="{% url register_normal_user %}">Solicite um Bike Anjo &raquo;</a>
+      </div>
+      <div class='span6'>
+        <h3>Quero ser um Bike Anjo!</h3>
+        <p>Você já tem uma certa experiência de pedaladas e quer ajudar a trazer mais ciclistas para a sua cidade?</p>
+        <a class="btn" href="{% url register_bikeanjo %}">Quero ser um Bike Anjo &raquo;</a>
+      </div>
+    </div>
+  </div>
+  <div class='span4' id='login-form-div'>
+	<h2>Entre</h2>
+  {% crispy login_form %}
+	{% load facebook %}
+	{% facebook_button %}
+  </div>
+</div>
+<br />
+<!--div class='row-fluid' id='map-img-container'>
+  <img src='{{ STATIC_URL }}img/bamap.png' />
+</div-->
+{% endblock %}

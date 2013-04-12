@@ -1,0 +1,26 @@
+Olá {{ request.bikeanjo.user.get_full_name }},
+
+{{ request.user.user.get_full_name }} fez um pedido de "{{ request.get_service_display }}".
+
+De acordo com nossas informações, você é uma das pessoas mais próximas na área de atendimento.
+
+O local de saída marcado foi: {{ request.departure_label }}
+
+e a chegada é em: {{ request.arrival_label }}
+
+Temos as seguintes informações adicionais sobre esse pedido:
+
+
+{{ request.info }}
+
+
+Você poderá atender este pedido nos próximos 10 dias?
+
+Sim: http://sistema.bikeanjo.com.br/requests/{{ request.pk }}/accept/
+Não: http://sistema.bikeanjo.com.br/requests/{{ request.pk }}/refuse/
+
+Equipe Bike Anjo
+--------------------------
+ATENÇÃO: SISTEMA DO BIKE ANJO EM FASE DE TESTES! 
+Para problemas/dúvidas/sugestões acesse:
+http://sistema.bikeanjo.com.br/feedback

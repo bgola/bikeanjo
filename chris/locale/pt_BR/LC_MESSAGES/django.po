@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 10:48-0300\n"
+"PO-Revision-Date: 2012-07-18 10:50\n"
+"Last-Translator: Bruno Gola <brunogola@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.6.6\n"
+
+#: dashboard.py:28
+msgid "Quick links"
+msgstr "Links rápidos"
+
+#: dashboard.py:34
+msgid "Return to site"
+msgstr "Voltar para o site"
+
+#: dashboard.py:35
+msgid "Change password"
+msgstr "Recuperar senha"
+
+#: dashboard.py:37
+msgid "See non-approved BikeAnjos"
+msgstr "Bike Anjos não aprovados"
+
+#: dashboard.py:38
+msgid "Log out"
+msgstr "Sair"
+
+#: dashboard.py:44 menu.py:25
+msgid "Applications"
+msgstr "Aplicações"
+
+#: dashboard.py:50 menu.py:29
+msgid "Administration"
+msgstr "Administração"
+
+#: dashboard.py:55 dashboard.py:74
+msgid "Recent Actions"
+msgstr "Ações Recentes"
+
+#: menu.py:22
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: settings.py:33
+msgid "Brazilian Portuguese"
+msgstr "Português do Brasil"
+
+#: settings.py:34
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: views.py:40
+msgid "Thanks for your feedback!"
+msgstr "Obrigado pele feedback :-)"
+
+#: views.py:88
+msgid "Could not authenticate: please verify your e-mail/password"
+msgstr "Por favor, verifique seu e-mail e/ou sua senha"
+
+#: views.py:95
+msgid "Could not authenticate: your account has been disabled"
+msgstr "Sua conta foi desabilitada"
+
+#: views.py:97
+msgid "Could not authenticate, please verify your e-mail/password"
+msgstr "Por favor, verifique seu e-mail e/ou sua senha"
+
+#: views.py:130
+msgid "Please check the errors in the form below"
+msgstr "Por favor, verifique os erros no formulário abaixo"
+
+#: views.py:140
+msgid "Please check again your points in the map"
+msgstr "Por favor, verifique os pontos marcados no mapa"
+
+#: views.py:146
+#, python-format
+msgid ""
+"Error saving the point %s, please add the point again and check the location"
+msgstr ""
+"Erro ao salvar o ponto %s, por favor adicione o ponto novamente e verifique "
+"a localização"
+
+#: views.py:149
+msgid "You must set a label for all points"
+msgstr "Você deve definir um nome para todos os pontos"
+
+#: views.py:152
+msgid "Profile successfully updated :-)"
+msgstr "Perfil atualizado com sucesso :-)"
+
+#: views.py:194
+msgid "Seu pedido foi enviado e em breve um Bike Anjo entrará em contato 0=D"
+msgstr ""
+
+#: views.py:211
+msgid ""
+"Obrigado por aceitar o pedido de Bike Anjo. Em breve você estará em contato "
+"com @ iniciante! 0=D"
+msgstr ""
+
+#: views.py:222
+msgid ""
+"O pedido foi recusado e estamos encaminhando para outro Bike Anjo. Obrigado!"
+" 0=D"
+msgstr ""
+
+#: views.py:274
+msgid "Sorry, invalid Facebook account"
+msgstr "Conta invalida"
+
+#: bikeanjo/admin.py:15
+msgid "Mark selected profiles as approved"
+msgstr "Aprovar os perfis selecionados"
+
+#: bikeanjo/admin.py:20
+msgid "Find matching"
+msgstr "Fazer matching"
+
+#: bikeanjo/admin.py:30
+#, fuzzy
+msgid "Export e-mails"
+msgstr "E-mail"
+
+#: bikeanjo/admin.py:52
+msgid "Key"
+msgstr "Chave"
+
+#: bikeanjo/forms.py:21
+msgid "How to use the map?"
+msgstr "Como usar o mapa?"
+
+#: bikeanjo/forms.py:61 bikeanjo/forms.py:82 bikeanjo/forms.py:127
+msgid "Send"
+msgstr "Enviar"
+
+#: bikeanjo/forms.py:68 bikeanjo/forms.py:237
+msgid "E-mail"
+msgstr "E-mail"
+
+#: bikeanjo/forms.py:69 bikeanjo/forms.py:160
+msgid "Password"
+msgstr "Senha"
+
+#: bikeanjo/forms.py:80
+msgid "Forgot your password?"
+msgstr "Esqueceu sua senha?"
+
+#: bikeanjo/forms.py:109 bikeanjo/models.py:125
+msgid "Read and Agree"
+msgstr "Eu li e concordo com o termo de isenção de responsabilidade"
+
+#: bikeanjo/forms.py:121
+msgid "Please mark the departure and the arrival destinations:"
+msgstr "Marque os pontos de saída e chegada:"
+
+#: bikeanjo/forms.py:121
+msgid ""
+"Type in the boxes an address and use the map to make sure it is the right "
+"location"
+msgstr ""
+"Digite nos campos um endereço e use o mapa para confirmar a localização "
+"exata"
+
+#: bikeanjo/forms.py:136
+msgid "Os campos de saída e de chegada não foram preenchidos corretamente"
+msgstr ""
+
+#: bikeanjo/forms.py:157
+msgid "Full name"
+msgstr "Nome"
+
+#: bikeanjo/forms.py:158 bikeanjo/models.py:29
+msgid "Phone number"
+msgstr "Telefone"
+
+#: bikeanjo/forms.py:161
+msgid "Repeat Password"
+msgstr "Confirme sua senha"
+
+#: bikeanjo/forms.py:180 bikeanjo/forms.py:351
+msgid "If you want to change your password:"
+msgstr "Para mudar sua senha:"
+
+#: bikeanjo/forms.py:185
+msgid "Save"
+msgstr "Salvar"
+
+#: bikeanjo/forms.py:210
+msgid "Passwords didn't match"
+msgstr "Para alterar a senha você deve digitar a mesma senha duas vezes"
+
+#: bikeanjo/forms.py:259
+msgid "Next"
+msgstr "Próximo"
+
+#: bikeanjo/forms.py:270
+msgid "This e-mail address is already taken"
+msgstr "Este endereço de e-mail já esta cadastrado"
+
+#: bikeanjo/forms.py:310
+msgid ""
+"Yes, I am interested on being a Bike Anjo volunteer.<br/>I won't charge for "
+"this and as a reward I only expect to see one more cyclist in the streets! "
+":)"
+msgstr ""
+"Sim, estou interessado em ser um Bike Anjo. Sei que os serviços prestados "
+"por mim, como voluntário, são de caráter gratuito, não cabendo, pois, "
+"remuneração a título de contraprestação, não havendo vínculo trabalhista ou "
+"qualquer outro.  Também tenho ciência de que esse trabalho voluntário não "
+"está subordinado a qualquer tipo de hierarquia, podendo, ou não ser feito em"
+" prol do solicitante, sempre a meu critério."
+
+#: bikeanjo/forms.py:322
+msgid "Personal data"
+msgstr "Dados pessoais"
+
+#: bikeanjo/forms.py:330
+msgid "About you"
+msgstr "Sobre você"
+
+#: bikeanjo/forms.py:336
+msgid "Please mark the points where you can help:"
+msgstr "Marque os pontos onde você pode atender:"
+
+#: bikeanjo/forms.py:337
+msgid ""
+"You can select as many points as you want. Our system recognizes a range of "
+"2mi from your selections. We recommend you to distribute on a range area "
+"that you know and are habituated to cycle from town. As more detailed, "
+"easier to find matched-requests."
+msgstr ""
+"Você pode colocar quantos pontos de Atendimento quiser. Nosso sistema faz um"
+" reconhecimento de até 3km dos pontos indicados por você. Aqui, ao colocar "
+"pontos da cidade que você conhece, recomendamos que os distribua dentro de "
+"Rotas que está acostumado a fazer no seu dia-dia... Quanto mais pontos "
+"distribuír mais fácil será para localizarmos pedidos que possam ser "
+"atendidos por você."
+
+#: bikeanjo/forms.py:338
+msgid "Mark the services you can offer:"
+msgstr "Marque os serviços que você pode oferecer:"
+
+#: bikeanjo/forms.py:344
+msgid "From 0 to 5 tell us your knowledge about:"
+msgstr "De 0 a 5 marque seu conhecimento sobre:"
+
+#: bikeanjo/forms.py:355
+msgid "Agreement"
+msgstr "Termo de responsabilidade"
+
+#: bikeanjo/models.py:19
+msgid "Male"
+msgstr "Masculino"
+
+#: bikeanjo/models.py:19
+msgid "Female"
+msgstr "Feminino"
+
+#: bikeanjo/models.py:20
+msgid "less than one year"
+msgstr "menos de um ano"
+
+#: bikeanjo/models.py:20
+msgid "between one and two years"
+msgstr "entre um e dois anos"
+
+#: bikeanjo/models.py:20
+msgid "between two and four years"
+msgstr "entre dois e quatro anos"
+
+#: bikeanjo/models.py:20
+msgid "more than 4 years"
+msgstr "mais de quatro anos"
+
+#: bikeanjo/models.py:28
+msgid "Birth date"
+msgstr "Data de nascimento"
+
+#: bikeanjo/models.py:30
+msgid "Province/State"
+msgstr "Estado"
+
+#: bikeanjo/models.py:31
+msgid "City"
+msgstr "Cidade"
+
+#: bikeanjo/models.py:32
+msgid "I'm currently available to accept requests"
+msgstr "Estou disponível para receber pedidos"
+
+#: bikeanjo/models.py:34
+msgid "How long have you been cycling?"
+msgstr "Há quanto tempo você pedala?"
+
+#: bikeanjo/models.py:35
+msgid "Do you commute by bike?"
+msgstr "Você usa a bicicleta como meio de transporte?"
+
+#: bikeanjo/models.py:35
+msgid "Yes"
+msgstr "Sim"
+
+#: bikeanjo/models.py:35
+msgid "No"
+msgstr "Não"
+
+#: bikeanjo/models.py:36
+msgid ""
+"Are you member of any NGO or other group? If yes please include any URLs"
+msgstr ""
+"Você participa de alguma ONG ou outro grupo? Se sim, por favor nos diga "
+"também o site da organização (se houver)"
+
+#: bikeanjo/models.py:37
+msgid ""
+"Do you keep any blog, twitter or any other social profile on the web that "
+"may be relevant?"
+msgstr ""
+"Você mantém um blog, twitter ou qualquer outra rede social que pode ser "
+"relevante para nós do Bike Anjo?"
+
+#: bikeanjo/models.py:39
+msgid "routes"
+msgstr "Rotas"
+
+#: bikeanjo/models.py:40 bikeanjo/models.py:103
+msgid "accompaniment to ride"
+msgstr "Acompanhamento para pedalar no transito"
+
+#: bikeanjo/models.py:41
+msgid "teach how to a bike"
+msgstr "Ensinar a pedalar"
+
+#: bikeanjo/models.py:42
+msgid "institutional events"
+msgstr "eventos institucionais"
+
+#: bikeanjo/models.py:44
+msgid "Mechanics/Fixing bikes"
+msgstr "Mecânica"
+
+#: bikeanjo/models.py:45
+msgid "Security"
+msgstr "Segurança"
+
+#: bikeanjo/models.py:46
+msgid "Laws"
+msgstr "Leis"
+
+#: bikeanjo/models.py:47
+msgid "Routes"
+msgstr "Rotas"
+
+#: bikeanjo/models.py:49
+msgid "Bikeanjo agreement"
+msgstr "Termo de responsabilidade Bike Anjo"
+
+#: bikeanjo/models.py:101
+msgid "Request type"
+msgstr "Tipo de atendimento"
+
+#: bikeanjo/models.py:102
+msgid "route"
+msgstr "Rota"
+
+#: bikeanjo/models.py:104
+msgid "learn how to ride a bicycle"
+msgstr "Aprender a pedalar"
+
+#: bikeanjo/models.py:109
+msgid "Processing"
+msgstr "Encaminhado"
+
+#: bikeanjo/models.py:110
+msgid "Waiting"
+msgstr "Aguardando"
+
+#: bikeanjo/models.py:111
+msgid "Waiting for your input"
+msgstr "Aguardando sua resposta"
+
+#: bikeanjo/models.py:112
+msgid "Scheduled"
+msgstr "Agendado"
+
+#: bikeanjo/models.py:113
+msgid "Finished"
+msgstr "Finalizado"
+
+#: bikeanjo/models.py:114
+msgid "Verified"
+msgstr "Verificado"
+
+#: bikeanjo/models.py:115
+msgid "Impossible"
+msgstr "Impossível"
+
+#: bikeanjo/models.py:124
+msgid "More information about the request"
+msgstr ""
+"Mais informações sobre o pedido ((Como começou a andar de bicicleta? Como "
+"chegou aqui? O que você busca com o Bike Anjo?)"
+
+#: templates/feedback.html:6
+msgid "Feedback"
+msgstr "Feedback"
+
+#: templates/feedback.html:7
+msgid "Please help us to improve the Bike Anjo system 0=D"
+msgstr "Por favor nos ajude a melhorar o sistema do Bike Anjo 0=D"
+
+#: templates/password_reset.html:6 templates/password_reset_complete.html:6
+#: templates/password_reset_confirm.html:6
+#: templates/password_reset_done.html:6
+msgid "Reset password"
+msgstr "Recuperar senha"
+
+#: templates/password_reset.html:7
+msgid ""
+"Type in your e-mail address so we can send a link for you to recover your "
+"password."
+msgstr ""
+"Digite seu endereço de e-mail e enviaremos um link para você continuar o "
+"processo de recuperação de senha."
+
+#: templates/password_reset.html:11 templates/password_reset_confirm.html:12
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/password_reset_complete.html:7
+msgid "Your password was sucessfully changed!"
+msgstr "Sua senha foi alterada com sucesso!"
+
+#: templates/password_reset_confirm.html:8
+msgid "Now please define your new password"
+msgstr "Por favor, defina sua nova senha"
+
+#: templates/password_reset_confirm.html:15
+msgid "Sorry, the link isn't valid. Try again."
+msgstr "Desculpe mas o endereço acessado não é valido. Tente novamente."
+
+#: templates/password_reset_done.html:7
+msgid ""
+"You will receive an email in a few minutes with the instructions for "
+"resetting your password."
+msgstr ""
+"Em alguns minutos você recebera um e-mail com as intruções para recuperar "
+"sua senha."
+
+#~ msgid "Error sending the e-mail, please try again in a few minutes"
+#~ msgstr "Erro ao enviar o e-mail, por favor tente novamente em alguns minutos."
+
+#~ msgid "Thanks, request updated successfully!"
+#~ msgstr "Obrigado, pedido atualizado com sucesso!"
+
+#~ msgid "First type in an address and click 'Search'"
+#~ msgstr "Digite um endereço e clique em 'Buscar'"
+
+#~ msgid "Verify if it's the correct location"
+#~ msgstr "Verifique no mapa se é o local correto"
+
+#~ msgid "Click 'Add'"
+#~ msgstr "Clique em 'Adicionar'"
+
+#~ msgid "Type another address and click 'Search' again"
+#~ msgstr "Digite outro endereço e clique em 'Buscar' novamente"
+
+#~ msgid "Repeat this steps until you have selected your whole cover area"
+#~ msgstr "Repita os passos até cobrir toda a sua área de atendimento"
+
+#~ msgid "Active"
+#~ msgstr "Ativo"

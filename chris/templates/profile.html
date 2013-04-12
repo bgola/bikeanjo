@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+  <div id='my' style='position: absolute; margin-top: -70px;'></div>
+  {% if not user.facebookprofile_set.count %}
+  	{% load facebook %}
+	  {% facebook_button %}
+  {% endif %}
+
+	<h2>Complete seus dados</h2>
+
+  {% crispy form form.helper %}
+</div>
+{% endblock %}
+
+{% block extra-script %}
+{{ block.super }}
+<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+<script src="{{ STATIC_URL }}js/json2.js"></script>
+<script src="{{ STATIC_URL }}js/google-maps.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.maskedinput-1.3.min.js"></script>
+<script>
+var bmap;
+$(document).ready(function() {
+	bmap = BikeAnjoMap({map_center: "{{ user.get_profile.city }}, {{ user.get_profile.state }}", 
+		draggable: true,  
+		maxZoom: 17,
+		minZoom: 7,
+		icon: '/bike-anjo-marker.png',
+		icon_center_x: 118,
+		icon_center_y: 114,
+		resize_icon: true});
+	bmap.initialize([ 
+	{% for point in points %}
+      		{lat: "{{ point.lat }}", lng: "{{ point.lng }}", label: "{{ point.label}}" }{% if not forloop.last %},{% endif %}
+      	{% endfor %}
+      	]);
+	$("#id_birthday").mask("99/99/9999");
+  $("#id_phone").mask("99-99999999?9");
+  $("#id_city").typeahead({source: [{% for city in cities %}"{{city}}"{% if not loop.last %},{% endif %}{% endfor %}], items: 6});
+  autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'), 
+    {types: ['geocode'],
+      componentRestrictions: {country: 'br'}});
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      bmap.codeAddress('#address');
+    });
+});
+function getAllMarkers() {
+    $("#id_points_json").val(bmap.exportMarkers);
+}
+function saveMarker() {
+    bmap.saveMarker();
+}
+function codeAddress() {
+    bmap.codeAddress();
+}
+</script>
+{% endblock %}

@@ -1,0 +1,40 @@
+Olá {{ request.user.user.get_full_name }}!
+
+Recebemos seu pedido de Bike Anjo e ficamos muito contentes por tomar a
+iniciativa de pedalar!
+
+Segue abaixo as informações do seu pedido de bike anjo através do formulário:
+
+Tipo de pedido: {{ request.get_service_display }}
+Local de saída: {{ request.departure_label }}
+Local de chegada: {{ request.arrival_label }}
+
+_________________________________________________________
+Mais informações sobre o pedido:
+{{ request.info }}
+_________________________________________________________
+
+Caso as informações estejam corretas, estamos copiando @ Bike Anjo 
+{{ request.bikeanjo.user.get_full_name }}, que se dispôs a te ajudar.
+
+Pedimos que combinem entre si o melhor dia para atender o pedido de Bike Anjo
+e sempre mantenham o e-mail <acompanhamento@bikeanjo.com.br> em cópia. 
+
+Boa pedalada!
+
+PS: As informações desse pedido contém algum erro? Avise a Equipe Bike Anjo
+em: http://sistema.bikeanjo.com.br/feedback
+
+Equipe Bike Anjo 
+twitter: @bikeanjo
+www.bikeanjo.com.br
+
+Somos bike «anjos» mas não estamos sempre com você. Respeite a sinalização e
+as regras de trânsito. Esteja sempre visível. Pratique direção defensiva na
+bicicleta. E vá de bike!
+
+Equipe Bike Anjo
+--------------------------
+ATENÇÃO: SISTEMA DO BIKE ANJO EM FASE DE TESTES! 
+Para problemas/dúvidas/sugestões acesse:
+http://sistema.bikeanjo.com.br/feedback

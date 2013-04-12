@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+	<div id="novo-pedido">
+		<h2>Peça um Bike Anjo</h2>
+		{% crispy form form.helper %}
+	</div>
+</div>
+
+<div class="modal hide fade" id="agreement">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+    <h3>Termo de isenção de responsabilidade</h3>
+  </div>
+  <div class="modal-body">
+<p>Optar pela bicicleta como meio de transporte é um direito assegurado pelo Código de Trânsito Brasileiro. Mas a combinação histórica de políticas públicas voltadas unicamente à utilização do automóvel com a falta de fiscalização do poder público tornam seu exercício não tão simples.</p>
+Nessa realidade foi criado o projeto Bike Anjo. Uma pessoa, com experiência em todos os requisitos necessários para transitar pelas vias usando a bicicleta, passa esse conhecimento ao interessado através de conversas (teoria) e o acompanha por algumas vezes em seu trajeto diário (prática).</p>
+
+<p>Acreditamos, que desta forma, ajudamos mais pessoas a descobrir uma nova forma de se locomover na cidade, mais saudável, harmônica e simples, humanizando a cidade e ainda melhorando nossa qualidade de vida, ao não poluir.</p>
+
+<p>Assim, o interessado deve estar ciente das conseqüências de utilizar a bicicleta como meio de transporte, assumindo a responsabilidade pela sua integridade física e moral, assim como o faz quando decide utilizar um automóvel, o que também envolve riscos. Por isso a exigência desse termo de isenção de responsabilidade.</p>
+
+<p>O interessado abaixo qualificado, neste ato, firma o presente termo de isenção de responsabilidade, declarando estar de acordo com o inteiro teor das disposições abaixo:</p>
+<ol>
+<li>Declaração – o interessado declara ser de sua livre e espontânea vontade utilizar a bicicleta como meio de transporte, estando apto física e psicologicamente para tomar esta decisão e apto física e psicologicamente, além de ciente das recomendações, direitos e deveres do ciclista urbano, para, sozinho, utilizar a bicicleta como meio de transporte após a interação com o seu “bike anjo”.</li>
+<li>Risco – declara estar ciente do risco em potencial de pedalar por vias urbanas.
+<li>Segurança pessoal – apesar das disposições legais a respeito, declara que usará seu capacete de proteção afivelado e que se manterá devidamente calçado durante todos os trajetos que for acompanhado por Bike Anjos, submetendo-se à sua verificação e fiscalização. Os Bike Anjos poderão se negar a prosseguir com os ensinamentos caso seja constatada a inobservância deste dispositivo.</li>
+<li>Cláusula de isenção de responsabilidade – o interessado, ao assinar o presente termo, isenta os Bike Anjos de toda e qualquer responsabilidade por danos materiais, pessoais, morais, à imagem, ou de qualquer outra espécie, que venham a ser causados à sua pessoa ou aos seus bens enquanto trafegarem durante sua preparação, bem como posteriormente à sua formação, quando estiver pedalando pelas vias autonomamente ou com outrem.</li>
+<li>Responsabilidade perante terceiros – o interessado, ao assinar o presente termo, expressamente se responsabiliza por todo e qualquer dano, material, moral, à imagem ou de qualquer outra espécie, que por sua ação ou omissão venha a causar a terceiros, eximindo os Bike Anjos de toda e qualquer responsabilidade indenizatória que possa vir a ser pleiteada por terceiros, como decorrência de ato comissivo ou omissivo praticado pessoalmente.</li>
+<li>Estado de saúde – o interessado declara que goza de bom estado geral de saúde, não sendo portador de qualquer enfermidade ou distúrbio físico ou psíquico; que não se submete a qualquer tratamento médico que o impossibilite de praticar qualquer atividade desportiva; que não é e nem nunca foi portador de distúrbios cardíacos ou pulmonares, diabetes, problemas nervosos ou psíquicos; que não sofre de desmaios freqüentes ou de convulsões, pressão alta ou baixa; que não sofre de qualquer outra enfermidade que pela sua natureza torne incompatível a prática do uso da bicicleta pela sua pessoa.</li>
+<li>Abastecimento pessoal - cabe ao interessado prover seu próprio abastecimento de reidratação e alimentação no decorrer dos ensinamentos, sabendo-se do desgaste físico provocado por pedalar.</li>
+<li>Respeito e observância legal - compromete-se ainda o interessado a cumprir a legislação vigente no município, estado e país, mais especificamente a de trânsito, a qual declara ser de seu conhecimento.</li>
+</ol>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block extra-script %}
+{{ block.super }}
+<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+<script src="{{ STATIC_URL }}js/json2.js"></script>
+<script src="{{ STATIC_URL }}js/google-maps.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.maskedinput-1.3.min.js"></script>
+<script>
+var bmap;
+$(document).ready(function() {
+    $("#div_id_arrival_label").remove();
+    $("#div_id_departure_label").remove();
+    $('#id_agreement').css('float', 'left');
+    $('#id_agreement').css('margin-right', '10px');
+    $('#div_id_agreement label').append('(<a href="#agreement" data-toggle="modal">leia</a>)');
+
+    bmap = BikeAnjoMap({icon: '/bike-anjo-marker-bigmap.png', resize_icon: false, icon_center_y: 65, icon_center_x: 65});
+    bmap.initialize([ 
+      {% for point in points %} 
+      {lat: "{{ point.lat }}", lng: "{{ point.lng }}", label: "{{ point.label}}" }{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ]);
+    autocomplete_dep = new google.maps.places.Autocomplete(document.getElementById('id_departure_label'), 
+        {types: ['geocode'],
+        componentRestrictions: {country: 'br'}});
+  
+    google.maps.event.addListener(autocomplete_dep, 'place_changed', function() {
+      var place = autocomplete_dep.getPlace();
+      bmap.codeAddress('#id_departure_label');
+    });
+
+    autocomplete_arr = new google.maps.places.Autocomplete(document.getElementById('id_arrival_label'), 
+        {types: ['geocode'],
+        componentRestrictions: {country: 'br'}});
+
+    google.maps.event.addListener(autocomplete_arr, 'place_changed', function() {
+      var place = autocomplete_arr.getPlace();
+      bmap.codeAddress('#id_arrival_label');
+    });
+
+});
+
+function getAllMarkers() {
+    $("#id_points_json").val(bmap.exportMarkers);
+}
+function saveMarker() {
+    bmap.saveMarker();
+}
+
+</script>
+{% endblock %}

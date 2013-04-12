@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Bike anjo</title>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="{{ STATIC_URL }}js/google-maps.js"></script>
+  <script src="{{ STATIC_URL }}js/markerclusterer_packed.js"></script>
+  <!-- Make the document body take up the full screen -->
+  <style type="text/css">
+    v\:* {behavior:url(#default#VML);}
+    html, body {width: 100%; height: 100%}
+    body {margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 0px}
+  </style>
+
+</head>
+<body>
+  <div id="map_canvas" style="width: 100%; height: 100%;"></div>
+
+  <script type="text/javascript">
+    //<![CDATA[        
+var bmap;
+$(document).ready(function() {
+    bmap = BikeAnjoMap({draggable: false, icon: '/bike-anjo-marker-bigmap.png', icon_center_y: 65, icon_center_x: 65, resize_icon: false, clusterer: true});
+    bmap.initialize([ 
+      {% for point in points %} 
+      {lat: "{{ point.lat }}", lng: "{{ point.lng }}", label: "{{ point.label}}" }{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ]);
+});
+      // Monitor the window resize event and let the map know when it occurs
+      if (window.attachEvent) { 
+        window.attachEvent("onresize", function() {this.bmap.onResize()} );
+      } else {
+        window.addEventListener("resize", function() {this.bmap.onResize()} , false);
+      }
+
+    //]]>
+  </script>
+
+</body></html>

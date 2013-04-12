@@ -1,0 +1,19 @@
+Olá {{ request.user.user.get_full_name }},
+
+Infelizmente não conseguimos achar um Bike Anjo próximo de você. Talvez isso
+tenha acontecido porque ainda não temos Bike Anjos na sua cidade. 
+
+Se você deseja que a gente chegue até a sua cidade, ou acredita que houve
+algum erro no seu pedido, mande seu recado no link
+<http://sistema.bikeanjo.com.br/feedback>.
+
+Sugerimos também que você procure grupos de passeio de bicicleta ou
+identifique se existe a Bicicletada em sua cidade (http://bicicletada.org).
+
+Boa sorte! 0=D
+
+Equipe Bike Anjo
+--------------------------
+ATENÇÃO: SISTEMA DO BIKE ANJO EM FASE DE TESTES! 
+Para problemas/dúvidas/sugestões acesse:
+http://sistema.bikeanjo.com.br/feedback

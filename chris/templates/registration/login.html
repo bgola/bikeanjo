@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Entre ou Registre-se</h2>
+<div id="register" class="form">
+	<form>
+		<table>
+			{{ registration_form.as_table }}
+		</table>
+	</form>
+<div id="login" class="form">
+	<form>
+		<table>
+			{{ login_form.as_table }}
+		</table>
+	</form>
+</div>
+{% endblock %}

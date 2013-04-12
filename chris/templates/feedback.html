@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+	<h2>{% trans "Feedback" %}</h2>
+	<p>{% trans "Please help us to improve the Bike Anjo system 0=D" %}</p>
+		{% crispy form %}
+</div> 
+{% endblock %}

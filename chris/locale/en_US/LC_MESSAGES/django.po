@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 10:48-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dashboard.py:28
+msgid "Quick links"
+msgstr ""
+
+#: dashboard.py:34
+msgid "Return to site"
+msgstr ""
+
+#: dashboard.py:35
+msgid "Change password"
+msgstr ""
+
+#: dashboard.py:37
+msgid "See non-approved BikeAnjos"
+msgstr ""
+
+#: dashboard.py:38
+msgid "Log out"
+msgstr ""
+
+#: dashboard.py:44 menu.py:25
+msgid "Applications"
+msgstr ""
+
+#: dashboard.py:50 menu.py:29
+msgid "Administration"
+msgstr ""
+
+#: dashboard.py:55 dashboard.py:74
+msgid "Recent Actions"
+msgstr ""
+
+#: menu.py:22
+msgid "Dashboard"
+msgstr ""
+
+#: settings.py:33
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: settings.py:34
+msgid "Spanish"
+msgstr ""
+
+#: views.py:40
+msgid "Thanks for your feedback!"
+msgstr ""
+
+#: views.py:88
+msgid "Could not authenticate: please verify your e-mail/password"
+msgstr ""
+
+#: views.py:95
+msgid "Could not authenticate: your account has been disabled"
+msgstr ""
+
+#: views.py:97
+msgid "Could not authenticate, please verify your e-mail/password"
+msgstr ""
+
+#: views.py:130
+msgid "Please check the errors in the form below"
+msgstr ""
+
+#: views.py:140
+msgid "Please check again your points in the map"
+msgstr ""
+
+#: views.py:146
+#, python-format
+msgid ""
+"Error saving the point %s, please add the point again and check the location"
+msgstr ""
+
+#: views.py:149
+msgid "You must set a label for all points"
+msgstr ""
+
+#: views.py:152
+msgid "Profile successfully updated :-)"
+msgstr ""
+
+#: views.py:194
+msgid "Seu pedido foi enviado e em breve um Bike Anjo entrará em contato 0=D"
+msgstr ""
+
+#: views.py:211
+msgid ""
+"Obrigado por aceitar o pedido de Bike Anjo. Em breve você estará em contato "
+"com @ iniciante! 0=D"
+msgstr ""
+
+#: views.py:222
+msgid ""
+"O pedido foi recusado e estamos encaminhando para outro Bike Anjo. Obrigado! "
+"0=D"
+msgstr ""
+
+#: views.py:274
+msgid "Sorry, invalid Facebook account"
+msgstr ""
+
+#: bikeanjo/admin.py:15
+msgid "Mark selected profiles as approved"
+msgstr ""
+
+#: bikeanjo/admin.py:20
+msgid "Find matching"
+msgstr ""
+
+#: bikeanjo/admin.py:30
+msgid "Export e-mails"
+msgstr ""
+
+#: bikeanjo/admin.py:52
+msgid "Key"
+msgstr ""
+
+#: bikeanjo/forms.py:21
+msgid "How to use the map?"
+msgstr ""
+
+#: bikeanjo/forms.py:61 bikeanjo/forms.py:82 bikeanjo/forms.py:127
+msgid "Send"
+msgstr ""
+
+#: bikeanjo/forms.py:68 bikeanjo/forms.py:237
+msgid "E-mail"
+msgstr ""
+
+#: bikeanjo/forms.py:69 bikeanjo/forms.py:160
+msgid "Password"
+msgstr ""
+
+#: bikeanjo/forms.py:80
+msgid "Forgot your password?"
+msgstr ""
+
+#: bikeanjo/forms.py:109 bikeanjo/models.py:125
+msgid "Read and Agree"
+msgstr ""
+
+#: bikeanjo/forms.py:121
+msgid "Please mark the departure and the arrival destinations:"
+msgstr ""
+
+#: bikeanjo/forms.py:121
+msgid ""
+"Type in the boxes an address and use the map to make sure it is the right "
+"location"
+msgstr ""
+
+#: bikeanjo/forms.py:136
+msgid "Os campos de saída e de chegada não foram preenchidos corretamente"
+msgstr ""
+
+#: bikeanjo/forms.py:157
+msgid "Full name"
+msgstr ""
+
+#: bikeanjo/forms.py:158 bikeanjo/models.py:29
+msgid "Phone number"
+msgstr ""
+
+#: bikeanjo/forms.py:161
+msgid "Repeat Password"
+msgstr ""
+
+#: bikeanjo/forms.py:180 bikeanjo/forms.py:351
+msgid "If you want to change your password:"
+msgstr ""
+
+#: bikeanjo/forms.py:185
+msgid "Save"
+msgstr ""
+
+#: bikeanjo/forms.py:210
+msgid "Passwords didn't match"
+msgstr ""
+
+#: bikeanjo/forms.py:259
+msgid "Next"
+msgstr ""
+
+#: bikeanjo/forms.py:270
+msgid "This e-mail address is already taken"
+msgstr ""
+
+#: bikeanjo/forms.py:310
+msgid ""
+"Yes, I am interested on being a Bike Anjo volunteer.<br/>I won't charge for "
+"this and as a reward I only expect to see one more cyclist in the streets! :)"
+msgstr ""
+
+#: bikeanjo/forms.py:322
+msgid "Personal data"
+msgstr ""
+
+#: bikeanjo/forms.py:330
+msgid "About you"
+msgstr ""
+
+#: bikeanjo/forms.py:336
+msgid "Please mark the points where you can help:"
+msgstr ""
+
+#: bikeanjo/forms.py:337
+msgid ""
+"You can select as many points as you want. Our system recognizes a range of "
+"2mi from your selections. We recommend you to distribute on a range area "
+"that you know and are habituated to cycle from town. As more detailed, "
+"easier to find matched-requests."
+msgstr ""
+
+#: bikeanjo/forms.py:338
+msgid "Mark the services you can offer:"
+msgstr ""
+
+#: bikeanjo/forms.py:344
+msgid "From 0 to 5 tell us your knowledge about:"
+msgstr ""
+
+#: bikeanjo/forms.py:355
+msgid "Agreement"
+msgstr ""
+
+#: bikeanjo/models.py:19
+msgid "Male"
+msgstr ""
+
+#: bikeanjo/models.py:19
+msgid "Female"
+msgstr ""
+
+#: bikeanjo/models.py:20
+msgid "less than one year"
+msgstr ""
+
+#: bikeanjo/models.py:20
+msgid "between one and two years"
+msgstr ""
+
+#: bikeanjo/models.py:20
+msgid "between two and four years"
+msgstr ""
+
+#: bikeanjo/models.py:20
+msgid "more than 4 years"
+msgstr ""
+
+#: bikeanjo/models.py:28
+msgid "Birth date"
+msgstr ""
+
+#: bikeanjo/models.py:30
+msgid "Province/State"
+msgstr ""
+
+#: bikeanjo/models.py:31
+msgid "City"
+msgstr ""
+
+#: bikeanjo/models.py:32
+msgid "I'm currently available to accept requests"
+msgstr ""
+
+#: bikeanjo/models.py:34
+msgid "How long have you been cycling?"
+msgstr ""
+
+#: bikeanjo/models.py:35
+msgid "Do you commute by bike?"
+msgstr ""
+
+#: bikeanjo/models.py:35
+msgid "Yes"
+msgstr ""
+
+#: bikeanjo/models.py:35
+msgid "No"
+msgstr ""
+
+#: bikeanjo/models.py:36
+msgid ""
+"Are you member of any NGO or other group? If yes please include any URLs"
+msgstr ""
+
+#: bikeanjo/models.py:37
+msgid ""
+"Do you keep any blog, twitter or any other social profile on the web that "
+"may be relevant?"
+msgstr ""
+
+#: bikeanjo/models.py:39
+msgid "routes"
+msgstr ""
+
+#: bikeanjo/models.py:40 bikeanjo/models.py:103
+msgid "accompaniment to ride"
+msgstr ""
+
+#: bikeanjo/models.py:41
+msgid "teach how to a bike"
+msgstr ""
+
+#: bikeanjo/models.py:42
+msgid "institutional events"
+msgstr ""
+
+#: bikeanjo/models.py:44
+msgid "Mechanics/Fixing bikes"
+msgstr ""
+
+#: bikeanjo/models.py:45
+msgid "Security"
+msgstr ""
+
+#: bikeanjo/models.py:46
+msgid "Laws"
+msgstr ""
+
+#: bikeanjo/models.py:47
+msgid "Routes"
+msgstr ""
+
+#: bikeanjo/models.py:49
+msgid "Bikeanjo agreement"
+msgstr ""
+
+#: bikeanjo/models.py:101
+msgid "Request type"
+msgstr ""
+
+#: bikeanjo/models.py:102
+msgid "route"
+msgstr ""
+
+#: bikeanjo/models.py:104
+msgid "learn how to ride a bicycle"
+msgstr ""
+
+#: bikeanjo/models.py:109
+msgid "Processing"
+msgstr ""
+
+#: bikeanjo/models.py:110
+msgid "Waiting"
+msgstr ""
+
+#: bikeanjo/models.py:111
+msgid "Waiting for your input"
+msgstr ""
+
+#: bikeanjo/models.py:112
+msgid "Scheduled"
+msgstr ""
+
+#: bikeanjo/models.py:113
+msgid "Finished"
+msgstr ""
+
+#: bikeanjo/models.py:114
+msgid "Verified"
+msgstr ""
+
+#: bikeanjo/models.py:115
+msgid "Impossible"
+msgstr ""
+
+#: bikeanjo/models.py:124
+msgid "More information about the request"
+msgstr ""
+
+#: templates/feedback.html:6
+msgid "Feedback"
+msgstr ""
+
+#: templates/feedback.html:7
+msgid "Please help us to improve the Bike Anjo system 0=D"
+msgstr ""
+
+#: templates/password_reset.html:6 templates/password_reset_complete.html:6
+#: templates/password_reset_confirm.html:6
+#: templates/password_reset_done.html:6
+msgid "Reset password"
+msgstr ""
+
+#: templates/password_reset.html:7
+msgid ""
+"Type in your e-mail address so we can send a link for you to recover your "
+"password."
+msgstr ""
+
+#: templates/password_reset.html:11 templates/password_reset_confirm.html:12
+msgid "Submit"
+msgstr ""
+
+#: templates/password_reset_complete.html:7
+msgid "Your password was sucessfully changed!"
+msgstr ""
+
+#: templates/password_reset_confirm.html:8
+msgid "Now please define your new password"
+msgstr ""
+
+#: templates/password_reset_confirm.html:15
+msgid "Sorry, the link isn't valid. Try again."
+msgstr ""
+
+#: templates/password_reset_done.html:7
+msgid ""
+"You will receive an email in a few minutes with the instructions for "
+"resetting your password."
+msgstr ""

@@ -1,0 +1,149 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/bikeanjo-less.css">
+  <!--script src="{{ STATIC_URL }}js/less-1.3.0.min.js"></script>
+  <link rel="stylesheet/less" href="{{ STATIC_URL }}less/bootstrap.less"-->
+  
+  <!-- For the sticky footer -->
+	<!--[if !IE 7]><style type="text/css">#sf-wrapper {display:table;height:100%}</style><![endif]-->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+       <script src="{{ STATIC_URL }}extras/h5bp/js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]>
+    <link href="css/bootstrap.ie6.css" rel="stylesheet">
+  	<p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+  <![endif]-->
+
+<style type="text/css">
+  
+  #feedback_link {
+     position: fixed;
+     left: 0;
+     top: 300px;
+     display: block;
+     width: 25px;
+     height: 87px;
+     text-indent: -10000px;
+     background-image: url(http://podcastingplugin.com/images/feedback-button.gif);
+     overflow: hidden;
+  }
+</style>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="{% url views.home %}"><i class="icon-home"></i> Home</a></li>
+          {% if user.is_authenticated %}
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="{% url profile %}">
+            <i class="icon-user"></i> Perfil
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url profile %}#my">Meus dados</a></li>
+              {% if user.get_profile.is_bikeanjo %}
+                <li><a href="{% url profile %}#mymap">Pontos de atendimento</a></li>
+              {% endif %}
+            </ul>
+          </li>
+      		  <li><a href="{% url views.requests %}"><i class="icon-search"></i> Peça um Bike Anjo</a></li>
+  	  	    {% if user.is_staff %}
+        		  <li><a target="_blank" href="{% url views.map %}"><i class="icon-map-marker"></i> Mapa</a></li>
+		          <li><a href='/admin/'><i class="icon-eye-open"></i> Admin</a></li>
+            {% endif %}
+          {% endif %}
+  		    <li><a href='http://www.bikeanjo.com.br/' target="_blank"><i class="icon-list-alt"></i> Blog</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+        <p class="navbar-text pull-right">Autenticado como <a href="{% url profile %}"><strong>{{ user.get_full_name }}</strong></a> | <a href="{% url views.logout %}"><strong>Sair</strong></a></p>
+        {% else %}
+        <p class="navbar-text pull-right"><a href='{% url home %}' id='login'><strong>Login</strong></a></p>
+        {% endif %}
+
+      </div><!-- !.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+{% if user.is_authenticated %}
+<a id="feedback_link" target="_blank" href="{% url feedback %}">Feedback</a>
+{% endif %}
+
+<div id="sf-wrapper"> 
+	<div class="container main"> 
+    <header>
+      <div id='header-img-container'>
+        <a href="{% url home %}">
+          <img src="{{ STATIC_URL }}img/bike-anjo.png" />
+        </a>
+      </div>
+  	</header>
+  
+	<div role="main">
+    <div id="content">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+
+  </div>
+</div>
+	  
+	  <!-- JavaScript at the bottom for fast page loading -->
+	
+	  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}extras/h5bp/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	  <!-- scripts concatenated and minified via ant build script-->
+    <script src="{{ STATIC_URL }}extras/prettify/prettify.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	  <!-- end scripts-->
+	
+	  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+	       mathiasbynens.be/notes/async-analytics-snippet -->
+	
+	  <script type="text/javascript">
+	  // Use the modernizr.load() function to run polyfills for older browsers.
+	    Modernizr.load({
+	
+	    });
+	  </script>
+	  <script>
+	    var _gaq=[['_setAccount','UA-33475430-1'],['_trackPageview']];
+	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	    s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+
+        
+      {% block extra-script %}
+      {% endblock %}
+  </div><!-- End .container.main -->
+</div><!-- End #sf-wrapper -->
+<div class="container footer">
+  <footer id="footer">
+  <p><strong>Atenção:</strong> Nosso sistema ainda está em fase de testes. Por favor, tenha um pouquinho de paciência se não funcionar exatamente como previamos. ;-)</p>
+  </footer>
+</div>
+  <!-- A little ie7- magic -->
+  <script type="text/javascript"> $(function(){if($.browser.msie&&parseInt($.browser.version,10)===6){$('.row div[class^="span"]:last-child').addClass("last-child");$('[class="span"]').addClass("margin-left-20");$(':button[class="btn"], :reset[class="btn"], :submit[class="btn"], input[type="button"]').addClass("button-reset");$(":checkbox").addClass("input-checkbox");$('[class^="icon-"], [class=" icon-"]').addClass("icon-sprite");$(".pagination li:first-child a").addClass("pagination-first-child")}}) </script>
+</body>
+</html>
