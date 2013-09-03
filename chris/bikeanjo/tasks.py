@@ -19,7 +19,7 @@ def send_mails():
         return True
     connection = get_connection(backend=EMAIL_BACKEND)
     for message in messages:
-        if not email_re.search(message.email):
+        if not email_re.search(str(message.email)):
             message.delete()
             continue
         try:
