@@ -18,7 +18,7 @@ from chris.mailer import send_mail
 import datetime
 import simplejson
 
-RADIUS = 10
+RADIUS = 3
 
 gender_choices = (('m', _('Male')), ('f', _('Female')))
 cycling_since_CHOICES = [ (e, e) for e in (_('less than one year'), _('between one and two years'), _('between two and four years'), _('more than 4 years')) ]
@@ -151,7 +151,7 @@ class Request(models.Model):
     def timedelta(self):
         return datetime.datetime.now() - self.datetime 
     def find_bike_anjo(self, exclude=None):
-        query = Point.objects.filter(user__approved=True).exclude(user=self.user)
+        query = Point.objects.filter(user__approved=True, user__active=True).exclude(user=self.user)
         if exclude:
             query = query.exclude(user__pk__in=exclude)
 

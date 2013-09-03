@@ -35,6 +35,7 @@ $(document).ready(function() {
   {% if show_popup %}
     $("#new-ba-info").modal('show');
   {% endif %}
+  $("#id_city").attr('autocomplete', 'off');
   $("#id_city").typeahead({source: [{% for city in cities %}"{{city}}"{% if not loop.last %},{% endif %}{% endfor %}], items: 6});
 });
 </script>

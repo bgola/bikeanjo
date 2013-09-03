@@ -86,19 +86,23 @@ def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            try:
-                user_by_email = User.objects.get(email__iexact=form.cleaned_data['email'])
-            except User.DoesNotExist:
+            user_by_email = User.objects.filter(email__iexact=form.cleaned_data['email'])
+            if user_by_email.count() == 0:
                 messages.add_message(request, messages.ERROR, _('Could not authenticate: please verify your e-mail/password'))
                 return HttpResponseRedirect(reverse('home'))
-            user = authenticate(username=user_by_email.username, password=form.cleaned_data['password'])
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                else:
-                    messages.add_message(request, messages.ERROR, _('Could not authenticate: your account has been disabled'))
-            else:
+            # HACK to bypass duplicate email bug
+            for u in user_by_email:
+                user = authenticate(username=u.username, password=form.cleaned_data['password'])
+                if user is not None:
+                    if user.is_active:
+                        login(request, user)
+                        break
+            else: 
+                user = None
+            if user is None:
                 messages.add_message(request, messages.ERROR, _('Could not authenticate, please verify your e-mail/password'))
+            elif not user.is_active:
+                messages.add_message(request, messages.ERROR, _('Could not authenticate: your account has been disabled'))
     return HttpResponseRedirect(request.session.get('next', reverse('home')))
 
 @login_required
@@ -319,6 +323,10 @@ class SocialSetup(FacebookSetup):
             try:
                 user = User.objects.get(email=email)
             except User.DoesNotExist:
+                # hack to not allow new users from facebook
+                messages.add_message(request, messages.ERROR, _("Sorry, invalid Facebook account"))
+                return HttpResponseRedirect(reverse('home'))
+                
                 # user does not exist in our database, so we see if it's a new bikeanjo
                 # and allow the creation of a new user
                 if request.session.get('quero-ser-um-bikeanjo', False):

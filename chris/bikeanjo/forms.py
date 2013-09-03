@@ -228,7 +228,8 @@ class ProfileForm(forms.ModelForm):
                     'other_groups',
                     'social_networks',
                     'active',
-                    'approved'
+                    'approved',
+                    'revisado'
             )
         widgets = {'state': BRStateSelect() }
 
@@ -300,7 +301,8 @@ class RegisterForm(ProfileForm):
                     'other_groups',
                     'social_networks',
                     'active',
-                    'approved'
+                    'approved',
+                    'revisado'
                     )
         widgets = {'state': BRStateSelect() }
 
@@ -369,6 +371,7 @@ class BikeAnjoProfileForm(ProfileForm):
         model = Profile
         exclude = ( 'user',
                     'is_bikeanjo',
+                    'revisado'
                     'approved')
         widgets = {'state': BRStateSelect() }
 

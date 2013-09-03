@@ -3,6 +3,7 @@ from celery import Celery
 from chris.mailer.engine import get_connection, EMAIL_BACKEND, socket_error, smtplib, logging
 from chris.mailer.models import Message
 from chris.bikeanjo.models import Request, EmailMessage
+from django.core.validators import email_re
 
 from celery.task.schedules import crontab  
 from celery.decorators import task  
@@ -18,6 +19,9 @@ def send_mails():
         return True
     connection = get_connection(backend=EMAIL_BACKEND)
     for message in messages:
+        if not email_re.search(message.email):
+            message.delete()
+            continue
         try:
             email = message.email
             email.connection = connection
@@ -26,7 +30,6 @@ def send_mails():
         except (socket_error, smtplib.SMTPSenderRefused, smtplib.SMTPRecipientsRefused, smtplib.SMTPAuthenticationError), err:
             message.defer()
             MessageLog.objects.log(message, 3, log_message=str(err))
-            return False
     return True
 
 @task
